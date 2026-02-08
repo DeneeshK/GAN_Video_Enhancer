@@ -1,0 +1,98 @@
+# ===============================
+# Python
+# ===============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+build/
+dist/
+.eggs/
+pip-wheel-metadata/
+
+# ===============================
+# Virtual Environments
+# ===============================
+.env
+.venv
+venv/
+env/
+conda-env/
+miniconda/
+anaconda/
+
+# ===============================
+# Jupyter
+# ===============================
+.ipynb_checkpoints/
+*.ipynb
+
+# ===============================
+# VS Code / IDE
+# ===============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===============================
+# OS junk files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Logs
+# ===============================
+*.log
+logs/
+
+# ===============================
+# Data folders (VERY IMPORTANT)
+# ===============================
+input/raw_videos/*
+output/*
+
+# Keep folder structure but ignore contents
+!input/raw_videos/.gitkeep
+!output/**/.gitkeep
+
+# ===============================
+# Model Weights (HUGE FILES)
+# ===============================
+models/weights/*
+models/**/weights/*
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.engine
+
+# ===============================
+# Temporary & Cache
+# ===============================
+tmp/
+temp/
+cache/
+.cache/
+
+# ===============================
+# FFmpeg temp files
+# ===============================
+*.ts
+*.yuv
+*.rgb
+*.raw
+
+# ===============================
+# Conda exports
+# ===============================
+conda-meta/
+pkgs/
+
+# ===============================
+# Environment exports (optional)
+# ===============================
+environment.local.yml
