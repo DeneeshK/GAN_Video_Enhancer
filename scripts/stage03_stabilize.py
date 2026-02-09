@@ -61,7 +61,7 @@ def apply_stabilization(input_video: Path, transform_file: Path, output_video: P
         str(output_video)
     ]
 
-    print("\n🚀 Applying Stabilization:")
+    print("\n Applying Stabilization:")
     print(" ".join(cmd))
 
     subprocess.run(cmd, check=True)

@@ -24,7 +24,7 @@ def check_ffmpeg():
     try:
         subprocess.run(["ffmpeg", "-version"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     except Exception:
-        print("❌ FFmpeg not found. Please install FFmpeg before continuing.")
+        print(" FFmpeg not found. Please install FFmpeg before continuing.")
         sys.exit(1)
 
 
@@ -46,12 +46,12 @@ def normalize_video(input_video: Path, output_video: Path, fps: int = 30, crf: i
         str(output_video)
     ]
 
-    print("\n🚀 Running FFmpeg Normalize:")
+    print("\n Running FFmpeg Normalize:")
     print(" ".join(cmd))
 
     subprocess.run(cmd, check=True)
 
-    print(f"\n✅ Module 01 Complete → {output_video}")
+    print(f"\n Module 01 Complete → {output_video}")
 
 
 def parse_args():
@@ -92,7 +92,7 @@ def main():
     args = parse_args()
 
     if not args.input.exists():
-        print(f"❌ Input file not found: {args.input}")
+        print(f" Input file not found: {args.input}")
         sys.exit(1)
 
     check_ffmpeg()
