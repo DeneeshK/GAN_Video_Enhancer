@@ -1,0 +1,39 @@
+🎯 Pipeline Checkpoint — Stage 07 Denoising
+
+Project: video_enhancer_v2
+Current Resume Point: After Stage 07 — FastDVDNet Denoising
+
+✅ Completed Stages
+Stage	Name	Input	Output	Status
+01	Normalize	input/raw_videos/*.mp4	output/stage_01_normalized/normalized.mp4	Done
+02	Deinterlace	stage_01_normalized/normalized.mp4	output/stage_02_deinterlaced/deinterlaced.mp4	Done
+03	Stabilize	stage_02_deinterlaced/deinterlaced.mp4	output/stage_03_stabilized/stabilized.mp4	Done
+04	Deflicker	stage_03_stabilized/stabilized.mp4	output/stage_04_deflicker/*	Done / planned
+05	Pre-Sharpen	stage_04_deflicker/*	output/stage_05_presharpen/*	Done / planned
+06	Frame Extraction	stage_05_presharpen/*	output/stage_06_frames/*.png	Done
+07	FastDVDNet Denoising	stage_06_frames/*.png	output/stage_07_denoised/*.png	Done ✅
+📂 Folder Status
+video_enhancer_v2/
+│
+├── output/
+│   ├── stage_01_normalized/
+│   ├── stage_02_deinterlaced/
+│   ├── stage_03_stabilized/
+│   ├── stage_04_deflicker/
+│   ├── stage_05_presharpen/
+│   ├── stage_06_frames/         ← extracted frames
+│   └── stage_07_denoised/       ← denoised frames (FastDVDNet)
+│
+├── models/
+│   └── fastdvdnet/              ← repo cloned
+│       ├── models.py            ← FastDVDNet definition
+│       ├── model.pth            ← trained weights
+│
+├── scripts/
+│   ├── stage01_normalize.py
+│   ├── stage02_deinterlace.py
+│   ├── stage03_stabilize.py
+│   ├── stage04_deflicker.py
+│   ├── stage05_presharpen.py
+│   ├── stage06_extract_frames.py
+│   └── stage07_fastdvdnet.py    ← fully working, checkpointed
