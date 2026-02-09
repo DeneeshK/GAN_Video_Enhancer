@@ -1,0 +1,146 @@
+🎥 Video Enhancement Pipeline — Project Checkpoint (Stage 01 → Stage 03)
+1. Current Project Structure (Simplified View)
+video_enhancer/
+│
+├── input/
+│   └── raw_videos/
+│       └── raw_footage.mp4
+│
+├── output/
+│   ├── stage_01_normalized/
+│   │   └── normalized.mp4
+│   │
+│   ├── stage_02_deinterlaced/
+│   │   └── deinterlaced.mp4
+│   │
+│   └── stage_03_stabilized/
+│       └── stabilized.mp4
+│
+├── scripts/
+│   ├── stage01_normalize.py
+│   ├── stage02_deinterlace.py
+│   └── stage03_stabilize.py
+│
+└── README.md
+
+2. Implemented Stages (Completed)
+Stage 01 — Normalize (stage01_normalize.py)
+
+Purpose:
+Standardize raw VHS footage into a stable digital format.
+
+Input:
+
+input/raw_videos/raw_footage.mp4
+
+
+Processing:
+
+Metadata stripping
+
+Frame rate normalization → 30 FPS
+
+Pixel format standardization
+
+Encoding normalization (x264, CRF 16)
+
+Output:
+
+output/stage_01_normalized/normalized.mp4
+
+Stage 02 — Deinterlacing (stage02_deinterlace.py)
+
+Purpose:
+Remove VHS interlacing artifacts and combing effects.
+
+Input:
+
+output/stage_01_normalized/normalized.mp4
+
+
+Processing:
+
+FFmpeg BWDIF deinterlacer:
+
+bwdif=mode=send_field:parity=auto:deint=all
+
+
+Output:
+
+output/stage_02_deinterlaced/deinterlaced.mp4
+
+Stage 03 — Stabilization (stage03_stabilize.py)
+
+Purpose:
+Remove camera shake, tape jitter, and mechanical wobble.
+
+Input:
+
+output/stage_02_deinterlaced/deinterlaced.mp4
+
+
+Processing:
+
+Motion detection (vidstabdetect)
+
+Motion compensation (vidstabtransform)
+
+Output:
+
+output/stage_03_stabilized/stabilized.mp4
+
+3. Current Pipeline Flow (Checkpoint)
+RAW VHS VIDEO
+      ↓
+Stage 01 — Normalize
+      ↓
+normalized.mp4
+      ↓
+Stage 02 — Deinterlace
+      ↓
+deinterlaced.mp4
+      ↓
+Stage 03 — Stabilize
+      ↓
+stabilized.mp4   ← CURRENT END POINT
+
+4. Next Planned Stages (Pending)
+Stage	Purpose
+Stage 04	Deflicker
+Stage 05	Pre-sharpen
+Stage 06	Frame Extraction
+Stage 07	Deep Learning Denoising (FastDVDnet)
+Stage 08	Super Resolution (Real-ESRGAN / SwinIR)
+Stage 09	Detail Refinement
+Stage 10	Face Restoration (GFPGAN)
+Stage 11	Temporal Consistency
+Stage 12	Final Video Reconstruction
+5. Resume Point
+
+Project safely paused at:
+
+output/stage_03_stabilized/stabilized.mp4
+
+
+Next step to implement:
+👉 Stage 04 — Deflicker
+
+6. Project Design Philosophy (Reminder)
+
+Modular pipeline
+
+Deterministic execution
+
+Intermediate output preservation
+
+Resume-safe processing
+
+Professional production-grade structure
+
+This file now acts as your permanent continuation checkpoint.
+
+Whenever you return, just say:
+
+Continue from Stage 04 — Deflicker
+
+and we resume instantly without confusion.
