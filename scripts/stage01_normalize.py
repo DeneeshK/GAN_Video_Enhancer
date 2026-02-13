@@ -18,6 +18,10 @@ import subprocess
 from pathlib import Path
 import sys
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+INPUT_DIR = PROJECT_ROOT / "input" / "raw_videos"
+OUTPUT_DIR = PROJECT_ROOT / "output" / "stage_01_normalized"
 
 def check_ffmpeg():
     """Ensure ffmpeg is installed and accessible"""
@@ -88,15 +92,32 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
-    args = parse_args()
+#def main():
+#    args = parse_args()
+#
+#   if not args.input.exists():
+#        print(f" Input file not found: {args.input}")
+#        sys.exit(1)
+#
+#    check_ffmpeg()
+#   normalize_video(args.input, args.output, args.fps, args.crf)
 
-    if not args.input.exists():
-        print(f" Input file not found: {args.input}")
-        sys.exit(1)
+def main():
 
     check_ffmpeg()
-    normalize_video(args.input, args.output, args.fps, args.crf)
+
+    videos = list(INPUT_DIR.glob("*"))
+
+    if not videos:
+        print(f"No input videos found in {INPUT_DIR}")
+        sys.exit(1)
+
+    for input_video in videos:
+        output_video = OUTPUT_DIR / input_video.name
+
+        print(f"\n Normalizing: {input_video.name}")
+        normalize_video(input_video, output_video)
+
 
 
 if __name__ == "__main__":

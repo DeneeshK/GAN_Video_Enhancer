@@ -7,7 +7,7 @@ from tqdm import tqdm
 # CONFIG
 # ----------------------------
 
-INPUT_DIR  = Path("output/stage_08_exp")
+INPUT_DIR  = Path("output/stage_08_superres")
 OUTPUT_DIR = Path("output/stage_09_detail_refine")
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

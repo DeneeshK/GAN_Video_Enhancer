@@ -15,7 +15,7 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 OUTPUT_VIDEO = OUTPUT_DIR / "final_restored.mp4"
 
-FPS = 58   # Change if your source is different
+FPS = 59   # Change if your source is different
 
 # ----------------------------
 # COLOR GRADING

@@ -16,6 +16,10 @@ import subprocess
 from pathlib import Path
 import sys
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+INPUT_DIR = PROJECT_ROOT / "output" / "stage_01_normalized"
+OUTPUT_DIR = PROJECT_ROOT / "output" / "stage_02_deinterlaced"
 
 def check_ffmpeg():
     """Ensure ffmpeg is installed"""
@@ -82,15 +86,37 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
-    args = parse_args()
+#def main():
+#    args = parse_args()
+#
+#    if not args.input.exists():
+#        print(f" Input file not found: {args.input}")
+#        sys.exit(1)
+#
+#   check_ffmpeg()
+#   deinterlace_video(args.input, args.output, args.crf)
 
-    if not args.input.exists():
-        print(f" Input file not found: {args.input}")
-        sys.exit(1)
+
+
+def main():
 
     check_ffmpeg()
-    deinterlace_video(args.input, args.output, args.crf)
+
+    videos = list(INPUT_DIR.glob("*"))
+
+    if not videos:
+        print(f"No input videos found in {INPUT_DIR}")
+        sys.exit(1)
+
+    for input_video in videos:
+        output_video = OUTPUT_DIR / input_video.name
+
+        print(f"\n▶ Deinterlacing: {input_video.name}")
+        deinterlace_video(input_video, output_video)
+
+    print("\n Stage 02 complete")
+
+
 
 
 if __name__ == "__main__":

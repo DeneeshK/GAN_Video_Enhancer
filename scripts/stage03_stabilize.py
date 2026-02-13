@@ -16,6 +16,13 @@ from pathlib import Path
 import sys
 
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+INPUT_DIR = PROJECT_ROOT / "output" / "stage_02_deinterlaced"
+OUTPUT_DIR = PROJECT_ROOT / "output" / "stage_03_stabilized"
+TRANSFORM_DIR = OUTPUT_DIR / "transforms"
+
+
 def check_ffmpeg():
     try:
         subprocess.run(
@@ -83,18 +90,39 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
-    args = parse_args()
+#def main():
+#    args = parse_args()
+#
+#   if not args.input.exists():
+#        print(f" Input file not found: {args.input}")
+#        sys.exit(1)
+#
+#    check_ffmpeg()
+#
+#    detect_motion(args.input, args.transform, args.shakiness, args.accuracy)
+#
+#   apply_stabilization(args.input, args.transform, args.output, args.smoothing, args.crf)
 
-    if not args.input.exists():
-        print(f" Input file not found: {args.input}")
-        sys.exit(1)
+def main():
 
     check_ffmpeg()
 
-    detect_motion(args.input, args.transform, args.shakiness, args.accuracy)
+    videos = list(INPUT_DIR.glob("*"))
 
-    apply_stabilization(args.input, args.transform, args.output, args.smoothing, args.crf)
+    if not videos:
+        print(f"No input videos found in {INPUT_DIR}")
+        sys.exit(1)
+
+    for input_video in videos:
+        output_video = OUTPUT_DIR / "stabilized.mp4"
+        transform_file = TRANSFORM_DIR / "stabilized.trf"
+
+        print(f"\n▶ Stabilizing: {input_video.name}")
+
+        detect_motion(input_video, transform_file)
+        apply_stabilization(input_video, transform_file, output_video)
+
+    print("\n Stage 03 complete")
 
 
 if __name__ == "__main__":
