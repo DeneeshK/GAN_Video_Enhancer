@@ -229,15 +229,7 @@ This enables seamless deployment in:
 
 ---
 
-# 🛠️ Included Tools
 
-| Tool               | Purpose                         |
-| ------------------ | ------------------------------- |
-| download_models.py | Auto-download model weights     |
-| benchmark.py       | Performance & quality testing   |
-| verify_pipeline.py | Full pipeline integrity testing |
-
----
 
 # 🧪 Current Limitations
 
@@ -268,9 +260,7 @@ All credit goes to the original authors of these models and frameworks.
 
 ---
 
-# 📜 License
 
-MIT License — Free for research, development, and experimentation.
 
 ---
 
@@ -283,3 +273,4 @@ Pull requests, bug reports, performance improvements, and feature ideas are welc
 # ⭐ If you find this project useful, consider giving it a star!
 
 ---
+
