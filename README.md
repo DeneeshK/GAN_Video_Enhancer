@@ -1,4 +1,4 @@
-# 🎬 GAN Video Enhancer — Modular AI Video Restoration Pipeline
+#  GAN Video Enhancer — Modular AI Video Restoration Pipeline
 
 A **fully modular, stage-based AI video enhancement pipeline** built using **classical computer vision + deep learning models**.
 This project focuses on **realistic restoration, temporal stability, controlled enhancement, and cinematic output quality**.
@@ -7,7 +7,7 @@ This project focuses on **realistic restoration, temporal stability, controlled 
 
 ---
 
-## 📌 Project Repository
+##  Project Repository
 
 ```bash
 gh repo clone DeneeshK/GAN_Video_Enhancer
@@ -21,7 +21,7 @@ git clone https://github.com/DeneeshK/GAN_Video_Enhancer.git
 
 ---
 
-# 📖 Project Overview
+# Project Overview
 
 This project implements a **12-stage professional video enhancement pipeline** that processes raw compressed video into a **high-quality, temporally stable, cinematic output**.
 
@@ -41,7 +41,7 @@ The architecture is designed to **avoid common GAN artifacts** such as:
 
 ---
 
-# 🏗️ Pipeline Design Philosophy
+#  Pipeline Design Philosophy
 
 This project uses a **hybrid processing model**:
 
@@ -56,7 +56,7 @@ This ensures:
 
 ---
 
-# 🧩 Pipeline Modules (Stage-wise Design)
+#  Pipeline Modules (Stage-wise Design)
 
 | Stage | Module                  | Description                                        |
 | ----- | ----------------------- | -------------------------------------------------- |
@@ -75,7 +75,7 @@ This ensures:
 
 ---
 
-# 🧠 Why This Architecture Works Better
+#  Why This Architecture Works Better
 
 GANs are extremely powerful — but **they amplify noise, flicker, and instability**.
 
@@ -89,7 +89,7 @@ This pipeline carefully **preconditions video before AI** and **refines after AI
 
 ---
 
-# 📂 Project Structure
+#  Project Structure
 
 ```
 video_enhancer/
@@ -110,9 +110,9 @@ video_enhancer/
 
 ---
 
-# ⚙️ Installation & Setup
+#  Installation & Setup
 
-## 1️⃣ Clone Repository
+##  Clone Repository
 
 ```bash
 git clone https://github.com/DeneeshK/GAN_Video_Enhancer.git
@@ -121,7 +121,7 @@ cd GAN_Video_Enhancer
 
 ---
 
-## 2️⃣ Create Python Environment (Recommended)
+##  Create Python Environment (Recommended)
 
 Using Conda:
 
@@ -139,7 +139,7 @@ pip install -r requirements_stage08.txt
 
 ---
 
-## 3️⃣ Clone Required Model Repositories
+##  Clone Required Model Repositories
 
 ```bash
 cd models
@@ -154,7 +154,7 @@ git clone https://github.com/TencentARC/GFPGAN.git gfpgan
 
 ---
 
-## 4️⃣ Download Model Weights
+##  Download Model Weights
 
 Place all pretrained weights inside:
 
@@ -170,7 +170,7 @@ Required:
 
 ---
 
-# 🚀 Running the Full Pipeline
+#  Running the Full Pipeline
 
 Place your input video into:
 
@@ -188,7 +188,7 @@ This executes **all 12 stages automatically**.
 
 ---
 
-# 🔧 Running Individual Stages
+#  Running Individual Stages
 
 Each stage is independently runnable.
 
@@ -208,7 +208,7 @@ This allows **fine-grained tuning** of:
 
 ---
 
-# 🔌 API / Backend Integration
+#  API / Backend Integration
 
 The pipeline is designed for **direct backend usage**.
 
@@ -231,7 +231,7 @@ This enables seamless deployment in:
 
 
 
-# 🧪 Current Limitations
+#  Current Limitations
 
 * **SwinIR stage is currently bypassed** due to stability constraints
 * Heavy GPU memory usage during super-resolution
@@ -239,7 +239,7 @@ This enables seamless deployment in:
 
 ---
 
-# 🏆 Credits & Acknowledgements
+#  Credits & Acknowledgements
 
 This project builds upon the excellent work of:
 
@@ -254,7 +254,7 @@ All credit goes to the original authors of these models and frameworks.
 
 ---
 
-# 🧠 Project Goal
+#  Project Goal
 
 > **High-quality video restoration with realism, stability, and cinematic rendering — without hallucination.**
 
@@ -273,4 +273,5 @@ Pull requests, bug reports, performance improvements, and feature ideas are welc
 # ⭐ If you find this project useful, consider giving it a star!
 
 ---
+
 
