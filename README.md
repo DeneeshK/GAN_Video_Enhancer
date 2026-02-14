@@ -119,6 +119,8 @@ git clone https://github.com/DeneeshK/GAN_Video_Enhancer.git
 cd GAN_Video_Enhancer
 ```
 
+**important** please make sure your system have ffmpeg
+
 ---
 
 ##  Create Python Environment (Recommended)
@@ -273,5 +275,6 @@ Pull requests, bug reports, performance improvements, and feature ideas are welc
 # ⭐ If you find this project useful, consider giving it a star!
 
 ---
+
 
 
