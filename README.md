@@ -263,7 +263,7 @@ All credit goes to the original authors of these models and frameworks.
 ---
 
 
-
+email: denishk2004@gmail.com
 ---
 
 # 🤝 Contributions
@@ -275,6 +275,7 @@ Pull requests, bug reports, performance improvements, and feature ideas are welc
 # ⭐ If you find this project useful, consider giving it a star!
 
 ---
+
 
 
 
